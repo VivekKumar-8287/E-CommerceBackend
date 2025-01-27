@@ -90,7 +90,7 @@ export const updateProduct = TryCatch(async (req, res, next) => {
 
   await product.save();
   
-  return res.status(201).json({
+  return res.status(200).json({
     success: true,
     message: "Product Updated Successfully",
   });
