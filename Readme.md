@@ -2,10 +2,10 @@
 
 ## Description
 
-
 This repository contains the backend code for an ecommerce application. Built with a robust tech stack, it provides all essential functionalities for a modern ecommerce platform, including user authentication, product management, and order handling.
 
 ### Tech Stack:
+
 - **Express.js**: Fast and flexible framework for handling server-side logic.
 - **Mongoose**: Elegant MongoDB object modeling for seamless database operations.
 - **MongoDB**: NoSQL database to store products, users, and orders.
@@ -13,6 +13,7 @@ This repository contains the backend code for an ecommerce application. Built wi
 - **dotenv**: Environment variable management for secure configuration.
 
 ### Features:
+
 - User authentication and authorization (registration, login, roles, etc.).
 - Product management (CRUD operations for products and categories).
 - Order management (create, update, and track orders).
@@ -42,10 +43,10 @@ This repository contains the backend code for an ecommerce application. Built wi
    ```
 
 ### Contributions:
+
 Contributions are welcome! Feel free to fork the repo, create a feature branch, and submit a pull request. Make sure to adhere to the coding standards and write tests for new features.
 
 ---
-
 
 - npm run watch
 
