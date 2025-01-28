@@ -1,11 +1,11 @@
 import { myCache } from "../app.js";
-import { Product } from "./../models/product";
-import { InvalidateCacheProps } from "./../types/types";
+import { Product } from "./../models/product.js";
+import { InvalidateCacheProps } from "./../types/types.js";
 import mongoose from "mongoose";
 
-export const connectDB = () => {
+export const connectDB = (uri: string) => {
   mongoose
-    .connect("mongodb://localhost:27017", {
+    .connect(uri, {
       dbName: "Ecommerce_Site",
     })
     .then((c) => console.log(`DB Connected to ${c.connection.host}`))
@@ -29,10 +29,11 @@ export const invalidateCache = async ({
     products.forEach((i) => {
       productKeys.push(`product-${i._id}`);
     });
+    
     myCache.del(productKeys);
   }
   if (order) {
   }
   if (admin) {
-  }
+  } 
 };

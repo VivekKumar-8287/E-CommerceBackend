@@ -1,4 +1,4 @@
-import { NextFunction, Request, Response } from "express";
+import { NextFunction, Request, RequestHandler, Response } from "express";
 import ErrorHandler from "../utils/utility-class.js";
 import { ControllerType } from "../types/types.js";
 
@@ -17,6 +17,15 @@ export const errorMiddleware = (
   });
 };
 
-export const TryCatch = (func:ControllerType)=>(req: Request, res: Response, next: NextFunction)=>{
-  return Promise.resolve(func(req, res, next)).catch(next);
+
+// export const TryCatch = (func:ControllerType)=>(req: Request, res: Response, next: NextFunction)=>{
+//   return Promise.resolve(func(req, res, next)).catch(next);
+// };
+
+
+// Wrap the controller function
+export const TryCatch = (func: ControllerType): RequestHandler => {
+  return (req, res, next) => {
+    Promise.resolve(func(req, res, next)).catch(next); // Forward errors to Express's error handler
+  };
 };
