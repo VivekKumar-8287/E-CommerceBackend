@@ -1,9 +1,9 @@
 import express from "express";
 import { connectDB } from "./utils/features.js";
-import { errorMiddleware } from "./middlewares/error.js";
 import NodeCache from "node-cache";
 import { config } from "dotenv";
 import morgan from 'morgan';
+import { errorMiddleware } from "./middlewares/error.js";
 // import Stripe from 'stripe';
 import cors from "cors";
 
@@ -44,11 +44,8 @@ app.use("/api/v1/order", orderRoute);
 app.use("/api/v1/payment", paymentRoute);
 app.use("/api/v1/dashboard", dashboardRoute);
 
-app.get("/demo", (req, res) => {
-  res.send("Hello Vivek!");
-});
-
 app.use("/uploads", express.static("uploads"));
+
 app.use(errorMiddleware);
 
 app.listen(port, () => {

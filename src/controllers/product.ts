@@ -57,7 +57,7 @@ export const getAdminProducts = TryCatch(async (req, res, next) => {
   return res.status(200).json({
     success: true,
     products,
-  });
+  }); 
 });
 
 // Revalidate on New, Update, Delete, Product & on New Order
@@ -210,7 +210,6 @@ export const searchProducts = TryCatch(
     });
   }
 );
-
 /* 
 const generateRandomProducts = async (count: number = 10 ) => {
   const products = [];
@@ -232,7 +231,6 @@ const generateRandomProducts = async (count: number = 10 ) => {
   await Product.create(products);
   console.log({success: true});
 };
-
  */
 
 /* 
