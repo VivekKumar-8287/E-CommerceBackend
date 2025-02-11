@@ -46,7 +46,7 @@ app.use("/api/v1/dashboard", dashboardRoute);
 
 app.use("/uploads", express.static("uploads"));
 
-app.use(errorMiddleware);
+// app.use(errorMiddleware);
 
 app.listen(port, () => {
   console.log(`Express is working on http://localhost:${port}`);

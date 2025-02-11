@@ -3,13 +3,12 @@ import ErrorHandler from "../utils/utility-class.js";
 import { ErrorRequestHandler } from "express";
 import { ControllerType } from "../types/types.js";
 
-
-export const errorMiddleware: ErrorRequestHandler = (
+export const errorMiddleware = (
   err: ErrorHandler,
   req: Request,
   res: Response,
   next: NextFunction
-) :Response=> {
+) => {
   const statusCode = (err as any).statusCode || 500;
   return res.status(statusCode).json({
     success: false,
@@ -33,7 +32,6 @@ export const errorMiddleware: ErrorRequestHandler = (
 //     message: err.message,
 //   });
 // };
-
 
 // export const TryCatch = (func:ControllerType)=>(req: Request, res: Response, next: NextFunction)=>{
 //   return Promise.resolve(func(req, res, next)).catch(next);
